@@ -20,7 +20,7 @@ and open the template in the editor.
         </h3>
     </div>
     <div class="panel-body">
-        <table class="table">
+        <table class="table table-condensed table-striped">
             <thead>
                 <tr>
                     <th>
@@ -42,8 +42,8 @@ and open the template in the editor.
             </thead>
             <tbody>
                 <tr ng-repeat="trans in transferencias">
-                    <td>
-                        {{trans.fecha| date:'short'}}
+                    <td class="col-md-4">
+                        {{trans.fecha| date:'medium'}}
                     </td>
                     <td>
                         {{trans.tipoPago}}
