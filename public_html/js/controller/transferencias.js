@@ -5,8 +5,6 @@
  */
 'use strict';
 function TransferenciasCtrl($scope, $http, $location) {
-    $scope.transferencias = [
-        {}
-    ];
+
 }
 

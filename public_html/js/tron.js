@@ -14,6 +14,8 @@ app.config(function($routeProvider) {
         controller: 'EnviarCtrl'});
     $routeProvider.when('/transferencias', {templateUrl: 'view/transferencias.html',
         controller: 'TransferenciasCtrl'});
+    $routeProvider.when('/cargar', {templateUrl: 'view/cargar.html',
+        controller: 'CargarCtrl'});
     $routeProvider.when('/', {templateUrl: 'view/cuenta.html',
         controller: 'CuentaCtrl'});
     $routeProvider.otherwise({redirectTo: '/'});
