@@ -5,6 +5,28 @@
  */
 'use strict';
 function CargarCtrl($scope, $http, $location) {
-
+    $scope.showTigo = false;
+    $scope.showPersonal = false;
+    $scope.showAquipago = false;
+    
+    $scope.toggle = function(option) {
+        switch(option) {
+            case "tigo":
+                $scope.showTigo = true;
+                $scope.showPersonal = false;
+                $scope.showAquipago = false;
+                break;
+            case "personal":
+                $scope.showTigo = false;
+                $scope.showPersonal = true;
+                $scope.showAquipago = false;
+                break;
+            case "aquipago":    
+                $scope.showTigo = false;
+                $scope.showPersonal = false;
+                $scope.showAquipago = true;
+                break;
+        }
+    }
 }
 

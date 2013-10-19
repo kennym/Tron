@@ -4,31 +4,56 @@
     </div>
 
     <div class="panel-body">
-        <img class="tigo-money" src="img/tigo_money.png" />
-        <img class="billetera-personal" src="img/personal_logo.jpg" width="200"/>
-        <img class="aquipago" src="img/aquipago.jpg" width="200"/>
+        <img class="tigo-money" ng-click="toggle('tigo')" src="img/tigo_money.png" />
+        <img class="billetera-personal" ng-click="toggle('personal')" src="img/personal_logo.jpg" width="200"/>
+        <img class="aquipago" ng-click="toggle('aquipago')" src="img/aquipago.jpg" width="200"/>
 
-        <div id="tigo-money-instructions" style="display: none">
+        <div id="tigo-money-instructions" ng-show="showTigo">
             <div class="well">
-                <h3>Instrucciones de pago</h3>
+                <h3>Instrucciones de pago Tigo</h3>
 
 
             </div>
         </div>
 
-        <div id="billetera-personal-instructions" style="display: none">
+        <div id="billetera-personal-instructions" ng-show="showPersonal">
             <div class="well">
-                <h3>Instrucciones de pago</h3>
+                <h3>Instrucciones de pago Billetera Personal</h3>
 
 
             </div>                  
         </div>
 
-         <div id="aquipago-instructions" style="display: none">
+         <div id="aquipago-instructions" ng-show="showAquipago">
             <div class="well">
-                <h3>Instrucciones de pago</h3>
+                <h3>Instrucciones de pago Aquipago</h3>
 
             </div>
         </div>
     </div>
   </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(document).on("click", ".tigo-money", function(e) {
+            e.preventDefault();
+            hideAll();
+            $("#tigo-money-instructions").show('slide');
+        });
+        $(document).on("click", ".billetera-personal", function(e) {
+            e.preventDefault();
+            hideAll();
+            $("#billetera-personal-instructions").show('slide');
+        });
+        $(document).on("click", ".aquipago", function(e) {
+            e.preventDefault();
+            hideAll();
+            $("#aquipago-instructions").show();
+        });
+        function hideAll() {
+            $("#tigo-money-instructions").hide();
+            $("#billetera-personal-instructions").hide();
+            $("#aquipago-instructions").hide();
+        }
+    })
+</script>
