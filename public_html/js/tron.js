@@ -10,8 +10,8 @@ var app = angular.module("Tron", ['ngRoute']);
 app.config(function($routeProvider) {
 //app.config(function($locationProvider, $routeProvider) {
 //    $locationProvider.html5Mode(true);
-    $routeProvider.when('/enviar', {templateUrl: 'view/enviar.html',
-        controller: 'EnviarCtrl'});
+    $routeProvider.when('/cargar', {templateUrl: 'view/cargar.html',
+        controller: 'CargarCtrl'});
     $routeProvider.when('/transferencias', {templateUrl: 'view/transferencias.html',
         controller: 'TransferenciasCtrl'});
     $routeProvider.when('/cobrar', {templateUrl: 'view/cobrar.html',
