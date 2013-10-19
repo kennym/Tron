@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 'use strict';
-function EnviarCtrl($scope, $http, $location) {
+function EnviarCtrl($scope, $rootScope, $http, $location) {
+
+    $rootScope.menu = "enviar";
 
 }
 

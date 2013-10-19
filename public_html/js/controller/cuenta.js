@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 'use strict';
-function CuentaCtrl($scope, $http, $location) {
-
+function CuentaCtrl($scope, $rootScope, $http, $location) {
+    $rootScope.menu = "cuenta";
     $scope.transferencias = [
         {fecha: new Date(),
             tipoPago: 'Transferencias',

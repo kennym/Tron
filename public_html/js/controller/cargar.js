@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 'use strict';
-function CargarCtrl($scope, $http, $location) {
+function CargarCtrl($scope, $rootScope, $http, $location) {
+    $rootScope.menu = "carga";
     $scope.showTigo = false;
     $scope.showPersonal = false;
     $scope.showAquipago = false;
-    
+
     $scope.toggle = function(option) {
-        switch(option) {
+        switch (option) {
             case "tigo":
                 $scope.showTigo = true;
                 $scope.showPersonal = false;
@@ -21,7 +22,7 @@ function CargarCtrl($scope, $http, $location) {
                 $scope.showPersonal = true;
                 $scope.showAquipago = false;
                 break;
-            case "aquipago":    
+            case "aquipago":
                 $scope.showTigo = false;
                 $scope.showPersonal = false;
                 $scope.showAquipago = true;

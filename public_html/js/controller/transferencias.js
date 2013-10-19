@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 'use strict';
-function TransferenciasCtrl($scope, $http, $location) {
-
+function TransferenciasCtrl($scope, $rootScope, $http, $location) {
+    $rootScope.menu = "transferencias";
 }
 
