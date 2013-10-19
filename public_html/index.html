@@ -4,6 +4,7 @@
     <head>
         <meta charset="utf-8">
         <title>
+            OpenPago
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
@@ -25,6 +26,7 @@
         <script type="text/javascript" src="js/controller/cobrar_confirmacion.js"></script>
         <script type="text/javascript" src="js/controller/transferencias.js"></script>
         <script type="text/javascript" src="js/controller/cargar.js"></script>
+        <script type="text/javascript" src="js/controller/registro.js"></script>
 
     </head>
 
@@ -58,9 +60,24 @@
                             <a href="#/cargar">Cargar saldo</a>
                         </li>
                     </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuario <b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">Perfil</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="#">Terminar sesión</a></li>
+                          </ul>
+                        </li>
+                    </ul>
                 </div>
+                
             </nav>
             <div ng-view></div>
+            
+            <footer>
+                &copy; OpenPago - made with love
+            </footer>
         </div>
     </body>
 
