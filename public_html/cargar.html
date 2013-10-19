@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <title>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+    rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+    rel="stylesheet">
+  </head>
+  
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">TrOn</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#">Mi cuenta</a>
+            </li>
+            <li>
+              <a href="#">Transferencias</a>
+            </li>
+            <li>
+              <a href="#">Enviar dinero</a>
+            </li>
+            <li class="active">
+              <a href="#">Cargar saldo</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Seleccione su forma de pago</h3>
+        </div>
+
+        <div class="panel-body">
+            <img class="tigo-money" src="img/tigo_money.png" />
+            <img class="billetera-personal" src="img/personal_logo.jpg" width="200"/>
+            <img class="aquipago" src="img/aquipago.jpg" width="200"/>
+            
+            <div id="tigo-money-instructions" style="display: none">
+                <div class="well">
+                    <h3>Instrucciones de pago</h3>
+                    
+                    
+                </div>
+            </div>
+            
+            <div id="billetera-personal-instructions" style="display: none">
+                <div class="well">
+                    <h3>Instrucciones de pago</h3>
+
+                    
+                </div>                  
+            </div>
+            
+             <div id="aquipago-instructions" style="display: none">
+                <div class="well">
+                    <h3>Instrucciones de pago</h3>
+
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+    >
+    </script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"
+    >
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".tigo-money").on("click", function(e) {
+                e.preventDefault();
+                hideAll();
+                $("#tigo-money-instructions").show('slide');
+            });
+            $(".billetera-personal").on("click", function(e) {
+                e.preventDefault();
+                hideAll();
+                $("#billetera-personal-instructions").show('slide');
+            });
+            $(".aquipago").on("click", "#aquipago", function(e) {
+                e.preventDefault();
+                hideAll();
+                $("#aquipago-instructions").show();
+            });
+            function hideAll() {
+                $("#tigo-money-instructions").hide();
+                $("#billetera-personal-instructions").hide();
+                $("#aquipago-instructions").hide();
+            }
+        })
+        </script>
+
+  </body>
+
+</html>
