@@ -34,20 +34,20 @@
         <div class="container">
             <nav class="navbar navbar-default" role="navigation">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">TrOn</a>
+                    <a class="navbar-brand" href="#">OpenPago</a>
                 </div>
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active">
+                        <li ng-class="{'active':menu === 'cuenta'}">
                             <a href="#">Mi cuenta</a>
                         </li>
-                        <li>
+                        <li ng-class="{'active':menu === 'transferencias'}">
                             <a href="#/transferencias">Transferencias</a>
                         </li>
-                        <li>
+                        <li ng-class="{'active':menu === 'enviar'}">
                             <a href="#/enviar">Enviar dinero</a>
                         </li>
-                        <li>
+                        <li ng-class="{'active':menu === 'carga'}">
                             <a href="#/cargar">Cargar saldo</a>
                         </li>
                     </ul>

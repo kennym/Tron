@@ -41,38 +41,21 @@ and open the template in the editor.
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr ng-repeat="trans in transferencias">
                     <td>
-                        2 de agosto 13:53
+                        {{trans.fecha| date:'short'}}
                     </td>
                     <td>
-                        Transferencia
+                        {{trans.tipoPago}}
                     </td>
                     <td>
-                        En proceso
+                        {{trans.estado}}
                     </td>
                     <td>
-                        Cuenta bancaria
+                        {{trans.destinatario}}
                     </td>
                     <td>
-                        -200.000 PYG
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        1 de agosto 13:53
-                    </td>
-                    <td>
-                        Transferencia
-                    </td>
-                    <td>
-                        Pagado
-                    </td>
-                    <td>
-                        elvis.ratzlaff@gmail.com
-                    </td>
-                    <td>
-                        -200.000 PYG
+                        {{trans.monto}}
                     </td>
                 </tr>
             </tbody>

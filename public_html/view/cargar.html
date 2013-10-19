@@ -32,28 +32,3 @@
         </div>
     </div>
   </div>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        $(document).on("click", ".tigo-money", function(e) {
-            e.preventDefault();
-            hideAll();
-            $("#tigo-money-instructions").show('slide');
-        });
-        $(document).on("click", ".billetera-personal", function(e) {
-            e.preventDefault();
-            hideAll();
-            $("#billetera-personal-instructions").show('slide');
-        });
-        $(document).on("click", ".aquipago", function(e) {
-            e.preventDefault();
-            hideAll();
-            $("#aquipago-instructions").show();
-        });
-        function hideAll() {
-            $("#tigo-money-instructions").hide();
-            $("#billetera-personal-instructions").hide();
-            $("#aquipago-instructions").hide();
-        }
-    })
-</script>

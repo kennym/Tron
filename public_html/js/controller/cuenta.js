@@ -4,7 +4,24 @@
  * and open the template in the editor.
  */
 'use strict';
-function CuentaCtrl($scope, $http, $location) {
-
+function CuentaCtrl($scope, $rootScope, $http, $location) {
+    $rootScope.menu = "cuenta";
+    $scope.transferencias = [
+        {fecha: new Date(),
+            tipoPago: 'Transferencias',
+            estado: 'En Proceso',
+            destinatario: 'Cuenta bancaria',
+            monto: '200.000'},
+        {fecha: new Date(),
+            tipoPago: 'Transferencias',
+            estado: 'En Proceso',
+            destinatario: 'Cuenta bancaria',
+            monto: '200.000'},
+        {fecha: new Date(),
+            tipoPago: 'Transferencias',
+            estado: 'Pagado',
+            destinatario: 'elvis.ratzlaff@gmail.com',
+            monto: '200.000'}
+    ];
 }
 
