@@ -20,6 +20,8 @@ app.config(function($routeProvider) {
         controller: 'CobrarConfirmacionCtrl'});
     $routeProvider.when('/registro', {templateUrl: 'view/registro.html',
         controller: 'RegistroCtrl'});
+    $routeProvider.when('/perfil', {templateUrl: 'view/perfil.html',
+        controller: 'PerfilCtrl'});
     $routeProvider.when('/', {templateUrl: 'view/cuenta.html',
         controller: 'CuentaCtrl'});
     $routeProvider.otherwise({redirectTo: '/'});
