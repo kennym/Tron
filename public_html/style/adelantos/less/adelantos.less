@@ -1,0 +1,194 @@
+//
+@icon-font-path:            "bootstrap/fonts/";
+@condensed-gutter-width:    5px;
+// CSS for tags
+table {
+    table-layout: fixed;
+    th,
+    td{
+        overflow: hidden;
+    }
+}
+
+// Adelatos internal class
+
+.table {
+    .table-btn-xs {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .table-btn-sm {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    .table-btn {
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+}
+
+.table-condensed{ 
+    .table-btn-xs {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+    .table-btn-sm {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
+
+.row-condensed {
+    .make-row(@condensed-gutter-width);
+    [class^="col-xs-"],
+    [class^="col-sm-"],
+    [class^="col-md-"],
+    [class^="col-lg-"]{
+        padding-left: (@condensed-gutter-width / 2);
+        padding-right: (@condensed-gutter-width / 2);
+    }
+}
+// Angular Class
+
+input.ng-invalid-required,
+select.ng-invalid-required{
+    color: @state-danger-text;
+    border-color: @state-danger-text;
+    background-color: @state-danger-bg;
+}
+
+
+// bootstrap overwrite
+
+.nav-tabs {
+    margin-bottom: 15px;
+}
+
+.row .pagination {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.breadcrumb {
+    padding: (@padding-base-vertical + 1px) @padding-base-horizontal;
+}
+
+// Tree 
+
+.tree {
+    ul,
+    li {
+        list-style: none;
+    }
+    input {
+        position: absolute;
+        opacity: 0;
+        &:disabled + label {
+            .text-muted;
+        }
+        &:checked:not(:disabled) ~ ul {
+            display: block;
+        }
+        ~ ul {
+            display: none;
+        }
+    }
+    label,label::before {
+        cursor: pointer;
+    }
+}
+
+/*.css-treeview ul,
+.css-treeview li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}*/
+
+/*.css-treeview input {
+    position: absolute;
+    opacity: 0;
+}*/
+
+/*.css-treeview {
+    font: normal 11px "Segoe UI", Arial, Sans-serif;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}*/
+
+/*.css-treeview a {
+    color: #00f;
+    text-decoration: none;
+}*/
+
+/*.css-treeview a:hover {
+    text-decoration: underline;
+}*/
+
+/*.css-treeview input + label + ul {
+    margin: 0 0 0 22px;
+}*/
+
+/*.css-treeview input ~ ul {
+    display: none;
+}*/
+
+/*.css-treeview label,
+.css-treeview label::before {
+    cursor: pointer;
+}*/
+
+/*.css-treeview input:disabled + label {
+    cursor: default;
+    opacity: .6;
+}*/
+
+/*.css-treeview input:checked:not(:disabled) ~ ul {
+    display: block;
+}*/
+
+/*.css-treeview label,
+.css-treeview label::before {
+    background: url("../pages/css3-treeview/example/icons.png") no-repeat;
+}*/
+
+/*.css-treeview label,
+.css-treeview a,
+.css-treeview label::before {
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+}*/
+
+/*.css-treeview label {
+    background-position: 18px 0;
+}*/
+
+/*.css-treeview label::before {
+    content: "";
+    width: 16px;
+    margin: 0 22px 0 0;
+    vertical-align: middle;
+    background-position: 0 -32px;
+}*/
+
+/*.css-treeview input:checked + label::before {
+    background-position: 0 -16px;
+}*/
+
+/* webkit adjacent element selector bugfix */
+/*@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .css-treeview {
+        -webkit-animation: webkit-adjacent-element-selector-bugfix infinite 1s;
+    }
+
+    @-webkit-keyframes webkit-adjacent-element-selector-bugfix {
+        from { 
+            padding: 0;
+        } to { 
+            padding: 0;
+        }
+    }
+}*/

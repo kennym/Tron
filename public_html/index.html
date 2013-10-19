@@ -1,129 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-  
-  <head>
-    <meta charset="utf-8">
-    <title>
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
-    rel="stylesheet">
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
-    rel="stylesheet">
-  </head>
-  
-  <body>
-    <div class="container">
-      <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">TrOn</a>
+<html ng-app="app" lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="stylesheet/less" type="text/css" href="style/tron.less" />
+        <script type="text/javascript" src="vendor/less/1.3.3/less.js"></script>
+        <script type="text/javascript" src="vendor/jquery/2.0.3/jquery.js"></script>
+        <script type="text/javascript" src="vendor/bootstrap/3.0.0/bootstrap.js"></script>
+        <script type="text/javascript" src="vendor/angularjs/1.2.0/angular.js"></script>
+        <script type="text/javascript" src="vendor/angularjs/1.2.0/angular-route.js"></script>
+        <script type="text/javascript" src="vendor/angularjs/1.2.0/angular-resource.js"></script>
+        <script type="text/javascript" src="vendor/angularjs/1.2.0/angular-touch.js"></script>
+        <script type="text/javascript" src="vendor/angularjs/1.2.0/angular.js"></script>
+        <script type="text/javascript" src="vendor/angularjs/1.2.0/i18n/angular-locale_es-py.js"></script>
+        <script type="text/javascript" src="vendor/bootstrap-ui/tabs/tabs.js"></script>
+        <script type="text/javascript" src="js/tron.js"></script>
+        <script type="text/javascript" src="js/controller/cuenta.js"></script>
+        <script type="text/javascript" src="js/controller/enviar.js"></script>
+        <script type="text/javascript" src="js/controller/transferencias.js"></script>
+
+    </head>
+
+    <body>
+        <script  type="text/javascript">
+            var app = angular.module("app", ['Tron']);
+        </script>
+        <div class="container">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">TrOn</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="#">Mi cuenta</a>
+                        </li>
+                        <li>
+                            <a href="#/transferencias">Transferencias</a>
+                        </li>
+                        <li>
+                            <a href="#/enviar">Enviar dinero</a>
+                        </li>
+                        <li>
+                            <a href="#">Cargar saldo</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div ng-view></div>
         </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active">
-              <a href="#">Mi cuenta</a>
-            </li>
-            <li>
-              <a href="#">Transferencias</a>
-            </li>
-            <li>
-              <a href="#">Enviar dinero</a>
-            </li>
-            <li>
-              <a href="#">Cargar saldo</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div class="page-header">
-        <div class="well">
-          <div class="row">
-            Balance: $PYG 800.000
-            <button class="btn btn-default pull-right">
-              Cargar saldo
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            Ultimas transacciones
-            <div class="pull-right">
-              <a href="">Imprimir</a>
-            </div>
-          </h3>
-        </div>
-        <div class="panel-body">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>
-                  Fecha
-                </th>
-                <th>
-                  Tipo
-                </th>
-                <th>
-                  Estado
-                </th>
-                <th>
-                  Destinatario
-                </th>
-                <th>
-                  Monto
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  2 de agosto 13:53
-                </td>
-                <td>
-                  Transferencia
-                </td>
-                <td>
-                  En proceso
-                </td>
-                <td>
-                  Cuenta bancaria
-                </td>
-                <td>
-                  -200.000 PYG
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  1 de agosto 13:53
-                </td>
-                <td>
-                  Transferencia
-                </td>
-                <td>
-                  Pagado
-                </td>
-                <td>
-                  elvis.ratzlaff@gmail.com
-                </td>
-                <td>
-                  -200.000 PYG
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
-    >
-    </script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"
-    >
-    </script>
-  </body>
+    </body>
 
 </html>
