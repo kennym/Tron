@@ -14,8 +14,10 @@ app.config(function($routeProvider) {
         controller: 'EnviarCtrl'});
     $routeProvider.when('/transferencias', {templateUrl: 'view/transferencias.html',
         controller: 'TransferenciasCtrl'});
-    $routeProvider.when('/cargar', {templateUrl: 'view/cargar.html',
-        controller: 'CargarCtrl'});
+    $routeProvider.when('/cobrar', {templateUrl: 'view/cobrar.html',
+        controller: 'CobrarCtrl'});
+    $routeProvider.when('/cobrar_confirmacion', {templateUrl: 'view/cobrar_confirmacion.html',
+        controller: 'CobrarConfirmacionCtrl'});
     $routeProvider.when('/', {templateUrl: 'view/cuenta.html',
         controller: 'CuentaCtrl'});
     $routeProvider.otherwise({redirectTo: '/'});
