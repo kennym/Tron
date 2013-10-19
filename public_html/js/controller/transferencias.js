@@ -6,5 +6,46 @@
 'use strict';
 function TransferenciasCtrl($scope, $rootScope, $http, $location) {
     $rootScope.menu = "transferencias";
+
+    $scope.estado = 'lista';
+
+    $scope.cancelar = function() {
+        $scope.estado = 'lista';
+    };
+
+    $scope.nuevaTrans = function() {
+        $scope.estado = 'trans';
+    };
+
+    $scope.enviar = function() {
+        $scope.estado = 'confirm';
+    };
+    
+    $scope.confirmar = function(){
+        $scope.estado = 'lista';
+    }
+
+    $scope.lista = function() {
+        if ($scope.estado === 'lista') {
+            return true;
+        } else {
+            return false;
+        }
+    };
+    $scope.trans = function() {
+        if ($scope.estado === 'trans') {
+            return true;
+        } else {
+            return false;
+        }
+    };
+    $scope.confirm = function() {
+        if ($scope.estado === 'confirm') {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
 }
 
