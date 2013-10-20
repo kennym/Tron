@@ -25,7 +25,7 @@ app.config(function($routeProvider) {
     $routeProvider.when('/perfil', {templateUrl: 'view/perfil.html',
         controller: 'PerfilCtrl'});
     $routeProvider.when('/pago_online', {templateUrl: 'view/pago_online.html',
-        controller: 'PerfilCtrl'});
+        controller: 'PagoOnlineCtrl'});
     $routeProvider.when('/', {templateUrl: 'view/cuenta.html',
         controller: 'CuentaCtrl'});
     $routeProvider.otherwise({redirectTo: '/'});

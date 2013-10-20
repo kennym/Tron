@@ -5,6 +5,38 @@
  */
 'use strict';
 function PagoOnlineCtrl($scope, $rootScope, $http, $location) {
-    $rootScope.showMenu = false;
+    $scope.estado = "inicio";
+    
+    $scope.confirmacion = function() {
+        if ($scope.estado === "confirmacion") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+   
+    $scope.inicial = function() {
+        if ($scope.estado === "inicio") {
+            return true;
+        } else {
+            return false;
+        }
+    };
+    
+    $scope.recibo = function() {
+        if ($scope.estado === "recibo") {
+            return true;
+        } else {
+            return false;
+        }
+    };
+    
+    $scope.login = function() {
+        $scope.estado = "confirmacion";
+    };
+    
+    $scope.transferir = function() {
+        $scope.estado = "recibo";
+    };
 }
 
