@@ -1,14 +1,5 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 'use strict';
-function CuentaCtrl($scope, $rootScope, $http, $location, $filter) {
-    $rootScope.menu = "cuenta";
-    $rootScope.loadTransferencias = function() {
-        
-    }
+function IndexCtrl($scope, $rootScope, $http, $location) {
     if ($rootScope.transferencias === undefined) {
         $rootScope.transferencias = [
             {num: 1, fecha: '2013-10-20T15:00:00.710Z',
@@ -56,15 +47,4 @@ function CuentaCtrl($scope, $rootScope, $http, $location, $filter) {
         ];
 //        $rootScope.transferencias = $filter('orderBy')($rootScope.transferencias, 'num');
     }
-
-    $rootScope.balance = function() {
-        var balance = 0;
-        angular.forEach($rootScope.transferencias, function(trans) {
-            balance = balance + parseInt(trans.montoEntrada);
-            balance = balance - parseInt(trans.montoSalida);
-
-        });
-        return balance;
-    };
 }
-

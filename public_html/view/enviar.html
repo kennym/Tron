@@ -95,18 +95,25 @@
             <div class="col-sm-9">
                 <form class="form" name="enviarForm">
                     <div class="form-horizontal">
-                        <div class="form-group">
-                            <label class="control-label">Monto en Gs.</label>
-                            <input type="text" class="form-control" ng-model="transferencia.montoSalida" disabled/>
-                        </div>
+                      
                         <div class="form-group">
                             <label class="control-label">Email</label>
-                            <input type="email" class="form-control" ng-model="transferencia.destinatario" disabled/>
+                            <div class="input-group">
+                                <span class="input-group-addon">@</span>
+                                <input type="email" class="form-control" ng-model="transferencia.destinatario" disabled/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Monto en Gs.</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" class="form-control" ng-model="transferencia.montoSalida" disabled/>
+                            </div>
                         </div>
                     </div>
                     <div class="btn-group pull-right">
                         <button class="btn" ng-click="cancelar()">Cancelar</button>
-                        <button class="btn btn-primary" ng-click="confirmar()">Confirmar</button>
+                        <button class="btn btn-primary" ng-href="#/cuenta" ng-click="confirmar()">Confirmar</button>
                     </div>
                 </form>
             </div>

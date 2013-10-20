@@ -33,14 +33,18 @@ function CobrarCtrl($scope, $rootScope, $http, $location, $filter) {
     };
 
     $scope.cobrar = function() {
+        if ($rootScope.transferencias === undefined) {
+            $rootScope.transferencias = [];
+        }
         $scope.transferencia.num = $rootScope.transferencias.length + 1;
         $scope.transferencia.fecha = new Date();
         $scope.transferencia.tipoPago = 'Transferencias';
         $scope.transferencia.estado = 'En Proceso';
         $scope.transferencia.destinatario = 'Tu cuenta';
         $scope.transferencia.montoSalida = '0';
+
         $rootScope.transferencias.push($scope.transferencia);
-        $location.path("/");
+        $location.path("/cuenta");
 //        $scope.trasferencia = {};
         // Enviar todo al servidor
     };
