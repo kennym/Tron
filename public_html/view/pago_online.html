@@ -1,46 +1,161 @@
-<div class="row">
+<div class="row" ng-hide="recibo()">
     <div class="col-lg-6">
         <div class="row">
-            <div class="col-lg-6 col-md-offset-3">
-                <img src="http://www.naveonline.com/resources/img/logo2.jpg" style="margin: 0 auto" />
+            <h1 class="page-header">
+                <div style="height: 80px">
+                   Beneficiario:
+                   <img src="img/naveonline.jpg" class="pull-right" style="margin: 0 auto" />
+                </div>
+            </h1>
+                   
+            <div class="well">
+                <h1>
+                    Resumen del pedido
+                </h1>
+
+                <table class="table">
+                    <thead>
+                        <th>
+                            Descriptions
+                        </th>
+                        <th>
+                            Amount
+                        </th>
+                    </thead>                
+                    <tbody>
+                        <tr>
+                            <td>
+                                Televisor 50'
+                            </td>
+                            <td>
+                                3.000.000 PYG
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Monto total</strong>
+                            </td>
+                            <td>
+                                3.000.000 PYG
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>    
             </div>
-            
-            <table class="table">
-                <thead>
-                    <th>
-                        Descriptions
-                    </th>
-                    <th>
-                        Amount
-                    </th>
-                </thead>
-            </table>
         </div>
-        
-        <h1 class="page-header">
-            Resumen del pedido
-        </h1>
+
     </div>
     
-    <div class="col-lg-6">
+    <div class="col-lg-6" ng-show="inicial()">
+        
+        <div class="well-sm">
+            <p>Inicie sesión con OpenPago para finalizar el pago</p>
+        </div>
+
         <form class="form-horizontal" role="form">
           <div class="form-group">
             <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
             <div class="col-lg-10">
-              <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+              <input type="email" class="form-control" id="inputEmail1"  value="kenny@kennymeyer.net" placeholder="Email">
             </div>
           </div>
           <div class="form-group">
             <label for="inputPassword1" class="col-lg-2 control-label">Contraseña</label>
             <div class="col-lg-10">
-              <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+              <input type="password" class="form-control" id="inputPassword1" value="testing123123" placeholder="Password">
             </div>
           </div>
           <div class="form-group">
             <div class="col-lg-offset-2 col-lg-10">
-              <button type="submit" class="btn btn-default">Sign in</button>
+              <button type="submit" class="btn btn-default" ng-click="login()">Iniciar sesión</button>
+              <div class="pull-right">
+                <a ng-href="#/registro" class="btn btn-info">Cliente nuevo?</a>
+              </div>
             </div>
           </div>
         </form>
+        
+        <hr />
+        
+        <h4>Alternativamente seleccione una de las siguientes opciones de pago via OpenPago</h4>
+        
+        <div class="row">
+            <div class="col-lg-4 col-md-offset-1">
+                <img class="tigo-money" ng-click="toggle('tigo')" src="img/tigo_money.png" />
+            </div>
+            
+            <div class="col-lg-4 col-md-offset-1" style="padding-top: 40px">
+                <img class="billetera-personal" ng-click="toggle('personal')" src="img/personal_logo.jpg" width="200"/>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4 col-md-offset-1">
+                <img class="aquipago" ng-click="toggle('aquipago')" src="img/aquipago.jpg" width="200"/>
+            </div>
+            <div class="col-lg-4 col-md-offset-1">
+                <img class="bancard" ng-click="toggle('bancard')" src="img/bancard.jpg" width="200"/>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6" ng-show="confirmacion()">
+        <div class="well">
+            <span class="glyphicon glyphicon-lock" style="color: gold"></span>                   
+            <p>
+                Ud. está por transferir el monto de <strong>3.000.000 PYG</strong> a
+                la cuenta de <strong>NAVE Online</strong>.
+            </p>
+
+            <p>
+                <strong>NAVE Online</strong> se compromete de cubrir la comisión de pago. 
+            </p>
+        </div>
+
+        
+        <div class="btn-group pull-right">
+            <button class="btn">Cancelar</button>
+            <button class="btn btn-primary" ng-click="transferir()">Transferir</button>
+        </div>
     </div>
 </div>
+
+<div class="row" ng-show="recibo()">
+    <div class="col-lg-8 col-md-offset-2">
+        <div class="alert alert-success">¡Pago exitosamente realizado!</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Confirmación de pago
+                    <div class="pull-right">
+                        <a href="">Imprimir</a>
+                    </div>
+                </h3>
+            </div>
+            
+            <div class="panel-body">
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Número de transacción:</label>
+                    <div class="col-lg-10">
+                      <p class="form-control-static">3223-1122-9922-9999</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Recipiente:</label>
+                    <div class="col-lg-10">
+                      <p class="form-control-static">Nave Online</p>
+                    </div>
+                  
+                  <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Monto:</label>
+                    <div class="col-lg-10">
+                      <p class="form-control-static">3.000.000 PYG</p>
+                    </div>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    
