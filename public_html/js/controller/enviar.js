@@ -30,7 +30,8 @@ function EnviarCtrl($scope, $rootScope, $http, $location) {
         $scope.transferencia.estado = 'Pagado';
         $scope.transferencia.origen = 'Tu cuenta';
         $scope.transferencia.montoEntrada = '0';
-        $rootScope.transferencias.push($scope.transferencia);
+//        $rootScope.transferencias.push($scope.transferencia);
+        $rootScope.transferencias.splice(0, 0,$scope.transferencia);
 //        $rootScope.transferencias = $filter('orderBy')($rootScope.transferencias, 'num');
 //        $location.path("/");
         $scope.transferencia = {};

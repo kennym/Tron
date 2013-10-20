@@ -39,7 +39,8 @@ function CobrarCtrl($scope, $rootScope, $http, $location, $filter) {
         $scope.transferencia.estado = 'En Proceso';
         $scope.transferencia.destinatario = 'Tu cuenta';
         $scope.transferencia.montoSalida = '0';
-        $rootScope.transferencias.push($scope.transferencia);
+        $rootScope.transferencias.splice(0, 0,$scope.transferencia);
+//        $rootScope.transferencias.push($scope.transferencia);
         $location.path("/");
 //        $scope.trasferencia = {};
         // Enviar todo al servidor
