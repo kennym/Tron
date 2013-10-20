@@ -20,7 +20,11 @@ app.config(function($routeProvider) {
         controller: 'EnviarCtrl'});
     $routeProvider.when('/registro', {templateUrl: 'view/registro.html',
         controller: 'RegistroCtrl'});
+    $routeProvider.when('/login', {templateUrl: 'view/login.html',
+        controller: 'LoginCtrl'});
     $routeProvider.when('/perfil', {templateUrl: 'view/perfil.html',
+        controller: 'PerfilCtrl'});
+    $routeProvider.when('/pago_online', {templateUrl: 'view/pago_online.html',
         controller: 'PerfilCtrl'});
     $routeProvider.when('/', {templateUrl: 'view/cuenta.html',
         controller: 'CuentaCtrl'});

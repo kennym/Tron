@@ -3,5 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+'use strict';
+function PagoOnlineCtrl($scope, $rootScope, $http, $location) {
+    $rootScope.showMenu = false;
+}
 

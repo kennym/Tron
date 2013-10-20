@@ -28,6 +28,8 @@
         <script type="text/javascript" src="js/controller/registro.js"></script>
         <script type="text/javascript" src="js/controller/perfil.js"></script>
         <script type="text/javascript" src="js/controller/enviar.js"></script>
+        <script type="text/javascript" src="js/controller/pago_online.js"></script>
+        <script type="text/javascript" src="js/controller/login.js"></script>
 
         <style  type="text/css">      
         .send-option {
@@ -55,7 +57,7 @@
                     <a class="navbar-brand" href="#"><img src="img/openpago.png" /></a>
                 </div>
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav" ng-show="showMenu">
                         <li ng-class="{'active':menu === 'cuenta'}">
                             <a href="#">Mi cuenta</a>
                         </li>
@@ -73,7 +75,7 @@
                         </li>
                     </ul>
                     
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" ng-show="showMenu">
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuario <b class="caret"></b></a>
                           <ul class="dropdown-menu">
@@ -85,14 +87,15 @@
                     </ul>
                 </div>
             </nav>
-        <div class="container">
-            <div ng-view></div>
-            
-            <footer>
-                &copy; OpenPago - made with love
-            </footer>
-        </div>
         
+            <div class="container">
+                <div ng-view></div>
+
+                <footer>
+                    &copy; OpenPago - Transferencias hechos fáciles
+                </footer>
+            </div>
+
         <script>
         // Include the UserVoice JavaScript SDK (only needed once on a page)
         UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/49NzOs6DUhzbyzxSpOxQ.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();

@@ -9,6 +9,7 @@ function CargarCtrl($scope, $rootScope, $http, $location) {
     $scope.showTigo = false;
     $scope.showPersonal = false;
     $scope.showAquipago = false;
+    $scope.showBancard = false;
 
     $scope.toggle = function(option) {
         switch (option) {
