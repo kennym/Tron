@@ -11,7 +11,7 @@
                 <label>Recipiente:</label>
                 <div class="input-group">
                     <span class="input-group-addon">@</span>
-                    <input class="form-control" type="email" ng-model="destinatario" placeholder="E-Mail" required>
+                    <input class="form-control" type="email" ng-model="transferencia.origen" placeholder="E-Mail" required>
                 </div>
             </div>
             
@@ -19,7 +19,7 @@
                 <label>Monto en Gs.:</label>
                 <div class="input-group">
                     <span class="input-group-addon">$</span>
-                    <input class="form-control" type="text" ng-model="monto" placeholder="Monto" required>
+                    <input class="form-control" type="text" ng-model="transferencia.montoEntrada" placeholder="Monto" required>
                 </div>
             </div>
             
@@ -41,13 +41,15 @@
         <p>Por favor confirme la información del pago previo al envio.</p>
 
         <p>
-            <strong>Monto:</strong> {{ monto }}PYG<br/>
-            <strong>Destinatario:</strong> {{ destinatario }}
+            <strong>Monto:</strong> {{ transferencia.montoEntrada }}PYG<br/>
+            <strong>Destinatario:</strong> {{ transferencia.origen }}
         </p>
 
         <div class="btn-group pull-right">
             <a ng-href="#/cobrar/" class="btn btn-default">Cancelar</a>
-            <a ng-href="#/" ng-click="cobrar()" class="btn btn-primary">Cobrar</a>
+            <button ng-click="cobrar()" class="btn btn-primary">Cobrar</button>
         </div>
     </div>
+    
 </div>
+<!--{{transferencias | json}}-->

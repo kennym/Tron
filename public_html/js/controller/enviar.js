@@ -1,10 +1,11 @@
 'use strict';
 function EnviarCtrl($scope, $rootScope, $http, $location) {
     $rootScope.menu = "enviar";
-    
+
     $scope.estado = 'elegir';
     $scope.img = '';
-    
+    $scope.transferencia = {};
+
     $scope.elegir = function() {
         $scope.estado = 'elegir';
     }
@@ -21,8 +22,18 @@ function EnviarCtrl($scope, $rootScope, $http, $location) {
     $scope.enviar = function() {
         $scope.estado = 'confirm';
     };
-    
-    $scope.confirmar = function(){
+
+    $scope.confirmar = function() {
+        $scope.transferencia.num = $rootScope.transferencias.length + 1;
+        $scope.transferencia.fecha = new Date();
+        $scope.transferencia.tipoPago = 'Transferencias';
+        $scope.transferencia.estado = 'Pagado';
+        $scope.transferencia.origen = 'Tu cuenta';
+        $scope.transferencia.montoEntrada = '0';
+        $rootScope.transferencias.push($scope.transferencia);
+//        $rootScope.transferencias = $filter('orderBy')($rootScope.transferencias, 'num');
+//        $location.path("/");
+        $scope.transferencia = {};
         $scope.estado = 'elegir';
     }
 
@@ -54,5 +65,6 @@ function EnviarCtrl($scope, $rootScope, $http, $location) {
             return false;
         }
     };
+
 }
 

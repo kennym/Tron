@@ -6,5 +6,6 @@
 'use strict';
 function TransferenciasCtrl($scope, $rootScope, $http, $location) {
     $rootScope.menu = "transferencias";
+    
 }
 

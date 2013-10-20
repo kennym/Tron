@@ -1,6 +1,6 @@
 <div class="page-header">
     <div class="well">
-        <h3>Balance: $PYG 800.000</h3>
+        <h3>Balance: {{balance() | number}} PYG</h3>
     </div>
 </div>
 
@@ -27,17 +27,23 @@
                         Estado
                     </th>
                     <th>
+                        Origen
+                    </th>
+                    <th>
                         Destinatario
                     </th>
                     <th>
-                        Monto
+                        Entrada
+                    </th>
+                    <th>
+                        Salida
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="trans in transferencias">
-                    <td class="col-md-4">
-                        {{trans.fecha| date:'medium'}}
+                <tr ng-repeat="trans in transferencias | limitTo:'10'">
+                    <td class="col-md-3">
+                        {{trans.fecha | date:'medium'}}
                     </td>
                     <td>
                         {{trans.tipoPago}}
@@ -46,10 +52,16 @@
                         {{trans.estado}}
                     </td>
                     <td>
+                        {{trans.origen}}
+                    </td>
+                    <td>
                         {{trans.destinatario}}
                     </td>
                     <td>
-                        {{trans.monto}}
+                        {{trans.montoEntrada| number}} PYG
+                    </td>
+                    <td>
+                        {{trans.montoSalida| number}} PYG
                     </td>
                 </tr>
             </tbody>

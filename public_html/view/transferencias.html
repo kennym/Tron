@@ -1,5 +1,5 @@
 <div class="page-header">
-     <button class="btn btn-primary">Imprimir</button>
+    <button class="btn btn-primary">Imprimir</button>
 </div>
 
 <hr>
@@ -11,7 +11,7 @@
         </h3>
     </div>
     <div class="panel-body">
-        <table class="table">
+        <table class="table table-condensed table-striped">
             <thead>
                 <tr>
                     <th>
@@ -24,51 +24,46 @@
                         Estado
                     </th>
                     <th>
+                        Origen
+                    </th>
+                    <th>
                         Destinatario
                     </th>
                     <th>
-                        Monto
+                        Entrada
+                    </th>
+                    <th>
+                        Salida
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        2 de agosto 13:53
+                <tr ng-repeat="trans in transferencias | orderBy:'-fecha' | limitTo:'10'">
+                    <td class="col-md-3">
+                        {{trans.fecha| date:'medium'}}
                     </td>
                     <td>
-                        Transferencia
+                        {{trans.tipoPago}}
                     </td>
                     <td>
-                        En proceso
+                        {{trans.estado}}
                     </td>
                     <td>
-                        Cuenta bancaria
+                        {{trans.origen}}
                     </td>
                     <td>
-                        -200.000 PYG
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        1 de agosto 13:53
+                        {{trans.destinatario}}
                     </td>
                     <td>
-                        Transferencia
+                        {{trans.montoEntrada| number}} PYG
                     </td>
                     <td>
-                        Pagado
-                    </td>
-                    <td>
-                        elvis.ratzlaff@gmail.com
-                    </td>
-                    <td>
-                        -200.000 PYG
+                        {{trans.montoSalida| number}} PYG
                     </td>
                 </tr>
             </tbody>
         </table>
-        <ul class="pagination">
+<!--        <ul class="pagination">
             <li>
                 <a href="#">Prev</a>
             </li>
@@ -84,6 +79,6 @@
             <li>
                 <a href="#">Next</a>
             </li>
-        </ul>
+        </ul>-->
     </div>
 </div>
