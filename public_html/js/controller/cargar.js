@@ -16,17 +16,28 @@ function CargarCtrl($scope, $rootScope, $http, $location) {
                 $scope.showTigo = true;
                 $scope.showPersonal = false;
                 $scope.showAquipago = false;
+                $scope.showBancard = false;
+
                 break;
             case "personal":
                 $scope.showTigo = false;
                 $scope.showPersonal = true;
                 $scope.showAquipago = false;
+                $scope.showBancard = false;
+
                 break;
             case "aquipago":
                 $scope.showTigo = false;
                 $scope.showPersonal = false;
                 $scope.showAquipago = true;
+                $scope.showBancard = false;
+                
                 break;
+            case "bancard":
+                $scope.showTigo = false;
+                $scope.showPersonal = false;
+                $scope.showAquipago = false;
+                $scope.showBancard = true;
         }
     }
 }

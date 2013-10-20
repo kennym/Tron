@@ -3,8 +3,5 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-'use strict';
-function TransferenciasCtrl($scope, $rootScope, $http, $location) {
-    $rootScope.menu = "transferencias";
-}
+
 

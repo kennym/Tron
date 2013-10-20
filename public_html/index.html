@@ -23,12 +23,20 @@
         <script type="text/javascript" src="js/tron.js"></script>
         <script type="text/javascript" src="js/controller/cuenta.js"></script>
         <script type="text/javascript" src="js/controller/cobrar.js"></script>
-        <script type="text/javascript" src="js/controller/cobrar_confirmacion.js"></script>
         <script type="text/javascript" src="js/controller/transferencias.js"></script>
         <script type="text/javascript" src="js/controller/cargar.js"></script>
         <script type="text/javascript" src="js/controller/registro.js"></script>
         <script type="text/javascript" src="js/controller/perfil.js"></script>
+        <script type="text/javascript" src="js/controller/enviar.js"></script>
 
+        <style  type="text/css">      
+        .send-option {
+            height: 210px;
+        }
+        .enviar-logo {
+            margin-top: 40px;
+        }
+        </style>
     </head>
 
     <body>
@@ -44,7 +52,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">OpenPago</a>
+                    <a class="navbar-brand" href="#"><img src="img/openpago.png" /></a>
                 </div>
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
@@ -59,6 +67,9 @@
                         </li>
                         <li ng-class="{'active':menu === 'carga'}">
                             <a href="#/cargar">Cargar saldo</a>
+                        </li>
+                        <li ng-class="{'active':menu === 'enviar'}">
+                            <a href="#/enviar">Enviar dinero</a>
                         </li>
                     </ul>
                     
