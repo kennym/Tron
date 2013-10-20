@@ -9,29 +9,33 @@
                 <form role="form">
                   <div class="form-group">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="registroInputNombre" placeholder="Ingrese su nombre">
+                        <input ng-model="cliente.nombre" type="text" class="form-control" id="registroInputNombre" placeholder="Ingrese su nombre">
                   </div>
                   <div class="form-group">
                     <label for="apellido">Apellido:</label>
-                    <input type="text" class="form-control" id="registroInputApellido" placeholder="Ingrese su apellido">
+                        <input ng-model="cliente.apellido" type="text" class="form-control" id="registroInputApellido" placeholder="Ingrese su apellido">
                   </div>
                   <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="registroInputEmail" placeholder="Ingrese su email">
+                        <input ng-model="cliente.email" type="email" class="form-control" id="registroInputEmail" placeholder="Ingrese su email">
                   </div>
                   <div class="form-group">
+                        <label for="email">Telefono:</label>
+                        <input ng-model="cliente.telefono" type="tel" class="form-control" id="registroInputEmail" placeholder="Ingrese su telefono">
+                    </div>
+                    <div class="form-group">
                     <label for="birth">Fecha de nacimiento:</label>
-                    <input type="text" class="form-control" id="registroInputEmail" placeholder="Ingrese su fecha de nacimiento">
+                        <input ng-model="cliente.nacimiento" type="date" class="form-control" id="registroInputEmail" placeholder="Ingrese su fecha de nacimiento">
                   </div>
                   <div class="form-group">
                     <label for="password">Contraseña:</label>
-                    <input type="password" class="form-control" id="registroInputPassword" placeholder="Password">
+                        <input ng-model="cliente.password" type="password" class="form-control" id="registroInputPassword" placeholder="Password">
                   </div>
                   <div class="form-group">
                     <label for="password_confirmation">Confirmación de contraseña:</label>
                     <input type="password" class="form-control" id="registroInputPasswordConfirmation" placeholder="Password confirmation">
                   </div>
-                  <a ng-href="#/" class="btn btn-primary btn-lg">Registrarme</a>
+                    <button ng-click="registrar()" class="btn btn-primary btn-lg">Registrarme</button>
                 </form>
             </div>
         </div>
