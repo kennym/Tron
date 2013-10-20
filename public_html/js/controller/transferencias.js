@@ -7,7 +7,11 @@
 function TransferenciasCtrl($scope, $rootScope, $http, $location) {
     $rootScope.menu = "transferencias";
 
-    $scope.estado = 'lista';
+    $scope.estado = 'elegir';
+    
+    $scope.elegir = function() {
+        $scope.estado = 'elegir';
+    }
 
     $scope.cancelar = function() {
         $scope.estado = 'lista';
@@ -46,6 +50,12 @@ function TransferenciasCtrl($scope, $rootScope, $http, $location) {
             return false;
         }
     };
-
+    $scope.elegir = function() {
+        if ($scope.estado === 'elegir') {
+            return true;
+        } else {
+            return false;
+        }
+    };
 }
 

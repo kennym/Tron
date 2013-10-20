@@ -16,8 +16,6 @@ app.config(function($routeProvider) {
         controller: 'TransferenciasCtrl'});
     $routeProvider.when('/cobrar', {templateUrl: 'view/cobrar.html',
         controller: 'CobrarCtrl'});
-    $routeProvider.when('/cobrar_confirmacion', {templateUrl: 'view/cobrar_confirmacion.html',
-        controller: 'CobrarConfirmacionCtrl'});
     $routeProvider.when('/registro', {templateUrl: 'view/registro.html',
         controller: 'RegistroCtrl'});
     $routeProvider.when('/perfil', {templateUrl: 'view/perfil.html',
